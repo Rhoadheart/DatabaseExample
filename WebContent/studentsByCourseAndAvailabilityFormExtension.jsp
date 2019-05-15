@@ -69,7 +69,7 @@
 		</table>
 		<table>
 		<tr>
-		<th>Select</th> <th>START_DATE_TIME</th> <th>LENGTH</th> 
+		<th>Select</th> <th>START_DATE_TIME</th>
 		</tr><%
 		for(int i = 0; i<intervals; i++){
 			

@@ -11,7 +11,7 @@
 <title>Find Available Peers</title>
 </head>
 <body>
-<h2>Delete Student Free Time Slots</h2>
+<h2>Find Available Peers</h2>
 
 <%	
 	Class.forName("org.mariadb.jdbc.Driver");

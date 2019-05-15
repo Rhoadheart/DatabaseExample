@@ -249,6 +249,7 @@ public class TestUtilities {
 
 	static void callCreateStudySession() throws SQLException{
 		int rows = 0;
+		ResultSet rset = null;
 		System.out.println("Enter the name for the study session: ");
 		String name = keyboard.nextLine();
 
@@ -267,8 +268,9 @@ public class TestUtilities {
 		System.out.println("\nCreating Study_Session at " + startTime + " on " + meetingDate );
 		System.out.println("***********************************************************************");
 		//(String name, Date meetingDate, Time startTime, Time duration){
-		rows = testObj.createStudySession(name, startMeeting, length);
-		System.out.println("A total of " + rows + " meeting(s) were added to the Study_Session table.");
+		rset = testObj.createStudySession(name, startMeeting, length);
+		
+		System.out.println("A Study_Session with ID: " + rset.getString(1) + " has been added to the Study_Session table.");
 	}
 
 	//test insertNewDepartmentLocation() method
@@ -341,8 +343,8 @@ public class TestUtilities {
 		Timestamp newSDateTime = Timestamp.valueOf(keyboard.nextLine() + ":00");
 
 		//Get new length from the user
-		System.out.print("Enter the new length for the free time slot as a time in 15 minute increments in 24hour format (HH:MM) : ");
-		Time newLength = Time.valueOf(keyboard.nextLine() + ":00");
+		System.out.print("Enter the new length for the free time slot in minutes: ");
+		int newLength = Integer.parseInt(keyboard.nextLine());
 
 		System.out.println("\n Updating your specified free time slot.");
 		System.out.println("*******************************************");
